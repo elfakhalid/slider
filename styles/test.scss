@@ -1,0 +1,72 @@
+.wrapper {
+  width: calc(100vw - 20%);
+  height: 600px;
+  margin: auto;
+  .container {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    perspective: 1400px;
+
+    .slides {
+      display: block;
+      transform-style: preserve-3d;
+      transition: all 0.5s;
+
+      > div {
+        display: block;
+        position: absolute;
+        width: 378px;
+        height: 500px;
+        transform-style: preserve-3d;
+        top: 94px;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+
+        .content {
+          background-color: #fff;
+          width: 95%;
+          height: 416px;
+          font-size: 40px;
+          border: 2px solid;
+        }
+      }
+    }
+  }
+}
+.slide {
+  position: relative;
+}
+.active {
+  background-color: green;
+  animation: animate 0.4s ease-in;
+  position: absolute;
+  z-index: 10;
+  height: 106%;
+  width: 100%;
+  top: 22px;
+}
+
+.buttons {
+  margin-top: 100px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
